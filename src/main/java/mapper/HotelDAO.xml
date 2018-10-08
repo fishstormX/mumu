@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!-- 接口全名 -->
+<mapper namespace="dao.HotelDao">				
+	<!-- 目的：为dao接口方法提供sql语句配置 -->
+	<select id="queryCByName" resultType="int">
+		<!-- 具体的sql -->
+		SELECT  count(1) FROM hotel WHERE hname=#{0}
+	</select>
+	
+	<select id="queryByName" resultType="Hotel">
+		<!-- 具体的sql -->
+		SELECT * FROM hotel WHERE hname=#{0}
+	</select>
+	
+	<select id="queryAll" resultType="Hotel">
+		SELECT * FROM hotel ORDER BY hotel_id LIMIT #{offset}, #{limit}
+	</select>
+	
+	<insert id="addHotelA">
+		INSERT INTO hotel (hname,adress,hotel_id,city,room,tele,ctripid,tuniuid,lvmamaid,yilongid)
+		 VALUES (#{hname},#{address},#{hotel_id},#{city},#{room},#{tele},#{ctripid},#{tuniuid},#{lvmamaid},#{yilongid}
+	</insert>
+	
+	<insert id="addHotel">
+		INSERT INTO hotel (hname,address,city,img,ctripid,introduce,grade,tip1,tip2)
+		 VALUES (#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8})
+	</insert>
+
+	<update id="updateYidByName">
+		UPDATE hotel SET yilongid=#{1} WHERE hname=#{0}
+	</update>
+
+	<update id="updateTidByName">
+		UPDATE hotel SET tuniuid=#{1} WHERE hname=#{0}
+	</update>
+
+	<update id="updateByName">
+		UPDATE hotel SET ctripid=#{ctripid},tuniuid=#{tuniuid},lvmamaid=,#{lvmamaid},yilongid=#{yilongid} WHERE hname=#{hname}
+	</update>
+</mapper>
