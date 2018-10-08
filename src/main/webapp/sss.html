@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>mapleSay</title>
+<head>
+	<link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+	<script type="text/javascript" src="/js/jquery2.2.2.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap.js"></script>
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+<style>
+	#head{
+		height:150px;
+	}
+
+	#main{
+		margin-left:10px;
+		
+	}
+
+	#detail{
+		border:double 1px grey;
+		width:60%;
+		height:1200px;
+		position:absolute;
+		left:30%;
+		top:160px;
+	}
+
+	#noteList{
+		width:30%;
+		margin-left:10px;
+		margin-top:10px;
+	}
+	.nbar{
+		width:80%;
+		height:120px;
+	}
+	.title{
+		color:blue;
+		font-size:18px;	
+	}
+	.con{
+		margin-left:30px;
+	}
+	.cTime{
+		margin-right:30px;
+		float:right;
+	}
+	.reply{
+		border-radius:10px;
+	}
+</style>
+</head>
+
+<body onload="Notesonload()">
+<div id="head">
+	这里应有一些东西<br>
+	这里应有一些东西<br>
+	这里应有一些东西<br>
+	这里应有一些东西这里应有一些东西这里应有一些东西这里应有一些东西这里应有一些东西这里应有一些东西
+</div>
+<div id="main">
+	<div id="noteList">
+			帖子list<br>
+			可以放个图
+			理应加上分页
+	</div>
+	<div id="detail">
+			帖子详情
+		<div class='alert alert-success'>polo</div>
+	</div>
+</div>
+<script>
+	function Notesonload(){
+	$.ajax( {
+        url: "/mapleSay/notes", 
+        type: "POST", 
+        dataType: "json",
+        async : false,
+        success: function(data){
+        	var note=data.note;
+        	var tags="";
+        	for(i=0;i<note.length;i++){
+            	tags=note.tags.replace(/,/g,"&nbsp;");
+        		$("#Notelist").append("<div id='n"+i+"' class='nbar' onclick='hahaha()'><span class='title'>"+note[i].title+"</span><br>"+
+        				"<span class='con'>"+note[i].context+"</span><br>"+
+        				"<span class='cTime'>"+note[i].createTime+"</span><br>"+
+        				"<span class='label label-info'>"+tags+"</span><br>"+
+        				"<span class='Nid' display='none'>"+note[i].noteId+"</span>"+
+        				"</div>");	
+        	}
+        }, error: function() {
+                alert("响应失败");
+            }
+		});
+	}
+	
+	$('.nbar').click(function(e) {
+		
+		id=$(this).find(".Nid").text();
+		var replies=data.note[id].reply;
+		alert(replies[0].context);
+		for(i=0;i<replies.length;i++){
+        	tags=note.tags.replace(/,/g,"&nbsp;");
+    		$("#detail").append("<div class='reply alert alert-success'>"+replies[0].context+"</div>");
+    	}
+	   });
+	
+	
+
+
+</script>
+</body>
