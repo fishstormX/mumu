@@ -9,3 +9,13 @@
 ## 技术栈
 - java　SSM框架组
 - Htmlunit 仿浏览器爬虫库
+
+## 图片展示
+![Image text](https://file.fishmaple.cn/mumu/1.png)
+![Image text](https://file.fishmaple.cn/mumu/2.png)
+![Image text](https://file.fishmaple.cn/mumu/3.png)
+![Image text](https://file.fishmaple.cn/mumu/4.png)
+![Image text](https://file.fishmaple.cn/mumu/5.png)
+![Image text](https://file.fishmaple.cn/mumu/6.png)
+![Image text](https://file.fishmaple.cn/mumu/7.png)
+![Image text](https://file.fishmaple.cn/mumu/8.png)
