@@ -11,11 +11,11 @@
 - Htmlunit 仿浏览器爬虫库
 
 ## 图片展示
-![Image text](https://file.fishmaple.cn/mumu/1.png)
-![Image text](https://file.fishmaple.cn/mumu/2.png)
-![Image text](https://file.fishmaple.cn/mumu/3.png)
-![Image text](https://file.fishmaple.cn/mumu/4.png)
-![Image text](https://file.fishmaple.cn/mumu/5.png)
-![Image text](https://file.fishmaple.cn/mumu/6.png)
-![Image text](https://file.fishmaple.cn/mumu/7.png)
-![Image text](https://file.fishmaple.cn/mumu/8.png)
+![首页](https://file.fishmaple.cn/mumu/1.png)
+![登录样式](https://file.fishmaple.cn/mumu/2.png)
+![酒店搜索页](https://file.fishmaple.cn/mumu/3.png)
+![搜索中](https://file.fishmaple.cn/mumu/4.png)
+![酒店详情页](https://file.fishmaple.cn/mumu/5.png)
+![酒店详情-价格表](https://file.fishmaple.cn/mumu/6.png)
+![用户中心](https://file.fishmaple.cn/mumu/7.png)
+![游记页](https://file.fishmaple.cn/mumu/8.png)
